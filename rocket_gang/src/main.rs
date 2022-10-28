@@ -1,14 +1,15 @@
 #[macro_use]
 extern crate rocket;
 
-use rocket::{ Build, Rocket };
 
 #[get("/")]
-fn index() -> &'static str  {
+async fn index() -> &'static str  {
     "Hello Rocket Gang"
 }
 
-#[launch]
-fn rocket() -> Rocket<Build>{
-    rocket::build().mount("/", routes![index])
+#[rocket::main]
+async fn main() {
+    rocket::build().mount("/", routes![
+        index
+    ]).launch().await;
 }
