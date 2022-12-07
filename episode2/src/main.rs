@@ -11,7 +11,7 @@ impl Server {
     }
 
     fn run(self) {
-        println!("I am running baby");
+        println!("I am running baby on {}", self.address);
     }
 }
 
