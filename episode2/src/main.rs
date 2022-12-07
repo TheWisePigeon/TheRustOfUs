@@ -17,4 +17,6 @@ impl Server {
 
 fn main() {
     println!("Hello, world!");
+    let test = Server::new(String::from("Yeah"));
+    test.run();
 }
