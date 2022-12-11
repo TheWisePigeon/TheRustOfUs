@@ -1,33 +1,8 @@
+use server::Server;
+use http::{Method, Request };
 
-struct Server{
-    address: String
-}
-
-impl Server {
-    fn new(address: String) -> Self {
-        Self { 
-            address 
-        }
-    }
-
-    fn run(self) {
-        println!("I am running baby on {}", self.address);
-    }
-}
-
-struct Request {
-    path: String,
-    query_string: Option<String>,
-    method: Method
-}
-
-enum Method {
-    GET,
-    POST,
-    PUT,
-    PATCH,
-    DELETE
-}
+mod server;
+mod http;
 
 
 fn main() {
