@@ -15,8 +15,23 @@ impl Server {
     }
 }
 
+struct Request {
+    path: String,
+    query_string: Option<String>,
+    method: Method
+}
+
+enum Method {
+    GET,
+    POST,
+    PUT,
+    PATCH,
+    DELETE
+}
+
+
 fn main() {
     println!("Hello, world!");
-    let test = Server::new("yeah".to_string());
+    let test = Server::new("127.0.0:5000".to_string());
     test.run();
 }
